@@ -130,7 +130,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
 
                 _context.Add(product);
                 await _context.SaveChangesAsync();
-                _notyfService.Success("Thêm sản phẩm thành công");
+                _notyfService.Success("Update success");
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CatId"] = new SelectList(_context.Categories, "CatId", "CatName", product.CatId);
@@ -182,14 +182,14 @@ namespace ShopBanDo.Areas.Admin.Controllers
                     product.DateModified = DateTime.Now;
 
                     _context.Update(product);
-                    _notyfService.Success("Cập nhật thành công");
+                    _notyfService.Success("Update Success");
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!ProductExists(product.ProductId))
                     {
-                        _notyfService.Success("Sản phẩm không tồn tại");
+                        _notyfService.Success("Product dont exist");
                         return NotFound();
                     }
                     else
@@ -230,7 +230,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
             var product = await _context.Products.FindAsync(id);
             _context.Products.Remove(product);
             await _context.SaveChangesAsync();
-            _notyfService.Success("Xóa thành công");
+            _notyfService.Success("Delete Success");
             return RedirectToAction(nameof(Index));
         }
 

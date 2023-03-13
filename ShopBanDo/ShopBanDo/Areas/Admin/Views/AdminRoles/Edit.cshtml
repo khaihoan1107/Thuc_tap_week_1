@@ -15,7 +15,7 @@
     <div class="card-body">
         <form class="forms-sample" asp-action="Edit" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @*<input type="hidden" asp-for="RoleId"/>*@
+            <input type="hidden" asp-for="RoleId"/>
             <div class="form-group">
                 <label>Role's name </label>
                 <input asp-for="RoleName" class="form-control">

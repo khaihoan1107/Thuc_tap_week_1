@@ -68,6 +68,7 @@
             }
             return RedirectToAction("Dashboard");
         }
+
         [AuthoriteFilter]
         //[Route("tai-khoan-cua-toi.html", Name = "Dashboard")]
         [Route("myaccount", Name = "Dashboard")]
@@ -82,6 +83,7 @@
             ViewBag.DonHang = lsDonHang;
             return View(khachhang);
         }
+
         public IActionResult DeleteOrder(int id) //done
         {
             var taikhoanID = HttpContext.Session.GetString("CustomerId");
@@ -222,7 +224,6 @@
 
             await HttpContext.SignInAsync(claimsPrincipal);
             _notyfService.Success("Login Success");
-
             if (string.IsNullOrEmpty(returnUrl))
             {
                 return RedirectToAction("Dashboard", "Accounts");

@@ -85,7 +85,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
 
                 _context.Add(page);
                 await _context.SaveChangesAsync();
-                _notyfService.Success("Thêm page thành công");
+                _notyfService.Success("Create sucess");
                 return RedirectToAction(nameof(Index));
             }
             return View(page);
@@ -134,7 +134,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
 
                     _context.Update(page);
                     await _context.SaveChangesAsync();
-                    _notyfService.Success("Cập nhật thành công");
+                    _notyfService.Success("Update Success");
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -178,7 +178,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
             var page = await _context.Pages.FindAsync(id);
             _context.Pages.Remove(page);
             await _context.SaveChangesAsync();
-            _notyfService.Success("Xóa page thành công");
+            _notyfService.Success("Delete success");
             return RedirectToAction(nameof(Index));
         }
 

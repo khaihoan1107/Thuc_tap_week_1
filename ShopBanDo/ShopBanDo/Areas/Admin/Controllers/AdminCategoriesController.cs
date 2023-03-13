@@ -137,7 +137,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
 
                     _context.Update(category);
                     await _context.SaveChangesAsync();
-                    _notyfService.Success("Cập nhật thành công");
+                    _notyfService.Success("Update Success");
                 }
                 catch (DbUpdateConcurrencyException)
                 {

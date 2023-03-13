@@ -65,7 +65,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
             {
                 _context.Add(role);
                 await _context.SaveChangesAsync();
-                _notifyService.Success("Tạo mới thành công");
+                _notifyService.Success("");
                 return RedirectToAction(nameof(Index));
             }
             return View(role);
@@ -106,7 +106,7 @@ namespace ShopBanDo.Areas.Admin.Controllers
                     _context.Update(role);
                    
                     await _context.SaveChangesAsync();
-                    _notifyService.Success("Cập nhật thành công");
+                    _notifyService.Success("Success");
                     
                 }
                 catch (DbUpdateConcurrencyException)
